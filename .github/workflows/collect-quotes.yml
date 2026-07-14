@@ -1,0 +1,54 @@
+name: Collect Daily Quote
+
+on:
+  schedule:
+    # Runs every 72 minutes -> ~20 times/day (UTC).
+    # Cron doesn't support "every 72 min" directly, so we use 5 offset hourly-ish slots.
+    # This set gives 20 runs/day spread across the day.
+    - cron: "5 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: quote-collector
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install google-genai openai
+
+      - name: Run quote collector
+        env:
+          GOOGLEAPI1: ${{ secrets.GOOGLEAPI1 }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          OPENROUTER_KEY2: ${{ secrets.OPENROUTER_KEY2 }}
+        run: python collect_quote.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dataset.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: add new quote [automated]"
+            git pull --rebase origin main
+            git push origin main
+          fi
