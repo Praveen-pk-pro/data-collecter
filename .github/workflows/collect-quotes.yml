@@ -42,8 +42,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Praveen-pk-pro"
+          git config user.email "188457092+Praveen-pk-pro@users.noreply.github.com"
           git add dataset.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
