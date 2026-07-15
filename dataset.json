@@ -71,5 +71,19 @@
       "uplift"
     ],
     "added_at": "2026-07-14T19:39:05.403411+00:00"
+  },
+  {
+    "id": "081650b4e70e",
+    "quote": "The journey of a thousand miles begins with a single step.",
+    "author": "Lao Tzu",
+    "category": "perseverance",
+    "tags": [
+      "journey",
+      "beginning",
+      "action",
+      "progress",
+      "first step"
+    ],
+    "added_at": "2026-07-15T03:21:02.029443+00:00"
   }
 ]
