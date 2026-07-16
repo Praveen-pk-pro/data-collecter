@@ -269,5 +269,20 @@
       "possibility"
     ],
     "added_at": "2026-07-16T16:25:09.953567+00:00"
+  },
+  {
+    "id": "fb2a12c1c35c",
+    "quote": "Go confidently in the direction of your dreams! Live the life you've imagined.",
+    "author": "Henry David Thoreau",
+    "category": "motivation",
+    "tags": [
+      "dreams",
+      "confidence",
+      "imagination",
+      "goals",
+      "life",
+      "inspiration"
+    ],
+    "added_at": "2026-07-16T18:13:38.178985+00:00"
   }
 ]
