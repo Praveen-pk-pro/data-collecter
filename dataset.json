@@ -511,5 +511,20 @@
       "passion"
     ],
     "added_at": "2026-07-18T15:04:10.912864+00:00"
+  },
+  {
+    "id": "edba6f8c00fd",
+    "quote": "Start where you are. Use what you have. Do what you can.",
+    "author": "Arthur Ashe",
+    "category": "motivation",
+    "tags": [
+      "start",
+      "action",
+      "present",
+      "resources",
+      "ability",
+      "do"
+    ],
+    "added_at": "2026-07-18T16:06:35.376098+00:00"
   }
 ]
