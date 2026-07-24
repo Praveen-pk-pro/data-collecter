@@ -910,5 +910,17 @@
       "creativity"
     ],
     "added_at": "2026-07-23T20:18:24.231831+00:00"
+  },
+  {
+    "id": "c3a5af66d2eb",
+    "quote": "The supreme art of war is to subdue the enemy without fighting.",
+    "author": "Sun Tzu",
+    "category": "discipline",
+    "tags": [
+      "strategy",
+      "war",
+      "leadership"
+    ],
+    "added_at": "2026-07-24T06:35:45.888949+00:00"
   }
 ]
